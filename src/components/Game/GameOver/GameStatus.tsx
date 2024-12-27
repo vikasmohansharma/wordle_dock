@@ -19,7 +19,8 @@ const GameStatus = ({ gameStatus, word }: GameStatusProps) => {
       </p>
       <div className="w-full flex flex-col gap-2">
         <a
-          href="#"
+          href={`https://en.wiktionary.org/wiki/${word}`}
+          rel="noopener noreferrer"
           target="_blank"
           className="w-min flex items-center gap-2 outline-none text-sm text-nowrap mx-auto border-2 rounded-lg border-zinc-700 uppercase font-medium tracking-wider text-blue-500 border-dashed mt-4 py-2 px-6"
         >
