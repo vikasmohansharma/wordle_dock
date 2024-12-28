@@ -1,4 +1,4 @@
-# Wordle - Word Guessing Game
+# Word Guessing Game
 
 A learning project built with React and TypeScript - created for educational purposes to practice modern web development concepts.
 
