@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { GameStatusType } from "../../../hooks/useWordle";
+import { decryptWord } from "../../../helpers";
 
 interface GameStatusProps {
   gameStatus: GameStatusType;
@@ -7,6 +8,7 @@ interface GameStatusProps {
 }
 
 const GameStatus = ({ gameStatus, word }: GameStatusProps) => {
+  const decryptedWord = decryptWord(word);
   return (
     <div className="w-full py-4 pb-8 flex flex-col">
       <h3 className="text-center text-xl font-semibold text-zinc-200">
@@ -19,12 +21,12 @@ const GameStatus = ({ gameStatus, word }: GameStatusProps) => {
       </p>
       <div className="w-full flex flex-col gap-2">
         <a
-          href={`https://en.wiktionary.org/wiki/${word}`}
+          href={`https://en.wiktionary.org/wiki/${decryptedWord}`}
           rel="noopener noreferrer"
           target="_blank"
           className="w-min flex items-center gap-2 outline-none text-sm text-nowrap mx-auto border-2 rounded-lg border-zinc-700 uppercase font-medium tracking-wider text-blue-500 border-dashed mt-4 py-2 px-6"
         >
-          {word}
+          {decryptedWord}
           <ExternalLink size={15} className="-mt-0.5" />
         </a>
       </div>

@@ -3,10 +3,11 @@ import Header from "./components/layout/Header";
 import Game from "./components/Game/Game";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { encryptWord } from "./helpers";
 
 const getWord = () => {
   const random = Math.floor(Math.random() * words.length);
-  return words[random];
+  return encryptWord(words[random]);
 };
 
 const App = () => {

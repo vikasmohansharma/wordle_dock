@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { handleFormatGuess } from "../helpers";
+import { decryptWord, handleFormatGuess } from "../helpers";
 import { HistoryState } from "../components/Game/GameOver/History";
 import { KeyInfo, keys } from "../data";
 import { toast } from "react-toastify";
@@ -62,6 +62,8 @@ const useWordle = (word: string) => {
   }, [isGameOver, gameStatus.isWinner, word]);
 
   const handleGuess = (guessRow: RowGuess) => {
+    const decryptedWord = decryptWord(word);
+
     setIsGameOver(false);
     setBoard((prevBoard) => {
       const newBoard = [...prevBoard];
@@ -69,13 +71,13 @@ const useWordle = (word: string) => {
       return newBoard;
     });
 
-    if (currentGuess === word) {
+    if (currentGuess === decryptedWord) {
       setGameStatus({ isOver: true, isWinner: true, guessesUsed: currentTurn });
       setIsGameOver(true);
       return;
     }
 
-    if (currentGuess !== word && currentTurn === TOTAL_GUESSES - 1) {
+    if (currentGuess !== decryptedWord && currentTurn === TOTAL_GUESSES - 1) {
       setGameStatus({ isOver: true, isWinner: false, guessesUsed: currentTurn });
       setIsGameOver(true);
     }
@@ -87,6 +89,7 @@ const useWordle = (word: string) => {
   };
 
   const handleKeyup = (e: string): void => {
+    const decryptedWord = decryptWord(word);
     const userInput = e.toLowerCase();
 
     if (userInput === "enter") {
@@ -100,21 +103,21 @@ const useWordle = (word: string) => {
       }
       // TODO: Check if the word is valid
 
-      const formattedGuess = handleFormatGuess(word, currentGuess);
+      const formattedGuess = handleFormatGuess(decryptedWord, currentGuess);
 
       const newKeysData = [...keysData];
       currentGuess.split("").forEach((letter, index) => {
-        if (![...word].includes(letter)) {
+        if (![...decryptedWord].includes(letter)) {
           const index = newKeysData.findIndex((key) => key.text === letter);
           newKeysData[index].color = "gray";
           return;
         }
-        if ([...word].includes(letter)) {
+        if ([...decryptedWord].includes(letter)) {
           const index = newKeysData.findIndex((key) => key.text === letter);
           newKeysData[index].color = "yellow";
         }
 
-        if ([...word][index] === letter) {
+        if ([...decryptedWord][index] === letter) {
           const index = newKeysData.findIndex((key) => key.text === letter);
           newKeysData[index].color = "green";
           return;
