@@ -8,7 +8,9 @@ const Header = ({ onNewGame }: HeaderProps) => {
   return (
     <header className="py-3 px-6 flex justify-between items-center border-b border-zinc-800">
       <h1 className="text-lg font-semibold">
-        Wor<span className="text-emerald-400">dle</span>
+        <span className="text-emerald-500">A</span>
+        <span className="text-amber-500">B</span>
+        <span className="text-zinc-400">C</span>
       </h1>
       <Button onClick={onNewGame}>New Game</Button>
     </header>
