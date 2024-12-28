@@ -1,6 +1,6 @@
-# Play Wordle
+# Wordle - Word Guessing Game
 
-A modern Wordle-like game built with React and TypeScript. Includes a nearly 6,000 list of words.
+A learning project built with React and TypeScript - created for educational purposes to practice modern web development concepts.
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
@@ -9,11 +9,17 @@ A modern Wordle-like game built with React and TypeScript. Includes a nearly 6,0
 
 <br>
 
+> Disclaimer
+> 
+> This project is created solely for educational purposes to learn React, TypeScript, and modern web development practices. It is not affiliated with, endorsed by, or associated with any commercial word guessing games. This is a personal learning exercise and is not intended for commercial use.
+
+<br>
+
 ![screenshot](https://github.com/user-attachments/assets/eb45984b-71e3-492b-8cf6-c51247b08dba)
 
 ## Features
 
-- **Classic Wordle Gameplay:** Guess the hidden five-letter word within six attempts
+- **Educational Word Guessing Game:** Practice deduction skills by finding a hidden five-letter word within six tries
 - **Visual Feedback:** Get immediate color-coded feedback for your guesses:
   - **Green:** Letter is correct and in the right position
   - **Yellow:** Letter is in the word but in the wrong position
@@ -32,4 +38,4 @@ A modern Wordle-like game built with React and TypeScript. Includes a nearly 6,0
 
 <hr>
 
-Stars are appreciated 🌟 and help me make it even better.
+Stars are appreciated 🌟 and motivate further learning and improvement.
