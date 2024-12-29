@@ -38,7 +38,7 @@ const Game = ({ word, onNewGame }: GameProps) => {
   return (
     <>
       {showGameOver && <GameOver word={word} isOpen={showGameOver} onClose={onNewGame} gameStatus={gameStatus} />}
-      <main className="w-full h-full py-12 lg:py-16">
+      <main className="w-full h-full py-12 lg:py-20">
         <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4">
           <div className="w-full max-w-[19rem] lg:max-w-md mx-auto grid grid-cols-1 gap-1.5 lg:gap-2">
             {board.map((row, rowIndex) => (
