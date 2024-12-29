@@ -8,11 +8,14 @@ interface HeaderProps {
 const Header = ({ onNewGame }: HeaderProps) => {
   return (
     <header className="py-3 px-6 flex justify-between items-center border-b border-zinc-800">
-      <h1 className="text-lg font-semibold">
-        <span className="text-emerald-500">A</span>
-        <span className="text-amber-500">B</span>
-        <span className="text-zinc-400">C</span>
-      </h1>
+      <a
+        href="https://azlanibrahim.notion.site/How-to-Play-Wordle-16b4c3b4e0a1800d923bc2f769855e66"
+        target="_blank"
+        rel="noreferrer"
+        className="text-sm text-sky-400 transition hover:underline"
+      >
+        Guide -&gt;
+      </a>
       <div className="flex items-center gap-2">
         <a
           title="Buy me a coffee"
