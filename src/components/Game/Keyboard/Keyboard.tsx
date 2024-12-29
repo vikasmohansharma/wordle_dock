@@ -19,7 +19,7 @@ interface KeyboardProps {
 const Keyboard = ({ onKeyPress, keysData }: KeyboardProps) => {
   return (
     <div className="w-full md:max-w-3xl lg:max-w-full md:mx-auto px-2 md:px-6 xl:px-0">
-      <div className="grid grid-cols-10 gap-1 lg:px-1.5">
+      <div className="grid grid-cols-10 gap-1 gap-y-2.5 lg:gap-y-1 lg:px-1.5">
         {keysData.map((key, index) => {
           const isEnterKey = key.text === "enter";
           return (
